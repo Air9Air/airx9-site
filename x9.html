@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<!-- saved from url=(0018)https://airx9.com/ -->
+<html lang="la"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Air.x9</title>
+
+  <style>
+    :root{
+      --bg:#000;
+      --text:#fff;
+      --muted:#bdbdbd;
+      --grid:#242424;
+      --grid2:#343434;
+    }
+    *{ box-sizing:border-box; }
+
+    body{
+      margin:0;
+      padding:48px 24px;
+      font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      font-size:13.5px;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    header{
+      text-align:center;
+      margin-bottom:56px;
+    }
+    header h1{
+      margin:0;
+      font-size:26px;
+      letter-spacing:3px;
+      font-weight:500;
+      transition: text-shadow .25s ease, transform .25s ease, letter-spacing .25s ease;
+      user-select:none;
+    }
+
+    main{
+      max-width:1100px;
+      margin:0 auto;
+      display:grid;
+      gap:52px;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      background:var(--bg);
+      border:1px solid var(--grid2);
+    }
+
+    th, td{
+      border:1px solid var(--grid);
+      padding:10px 12px;
+      text-align:center;
+      font-size:13.5px;
+      color:var(--text);
+    }
+
+    thead th{
+      font-weight:600;
+      letter-spacing:0.6px;
+      background:var(--bg);
+    }
+
+    td.label{
+      font-weight:600;
+      letter-spacing:0.2px;
+      white-space:nowrap;
+    }
+
+    .system-row td{
+      font-weight:600;
+      letter-spacing:0.2px;
+    }
+
+    .contact{
+      text-align:center;
+      font-size:14px;
+      letter-spacing:2px;
+      color:var(--muted);
+    }
+    .contact a{
+      color:var(--text);
+      text-decoration:none;
+      border-bottom:1px solid var(--grid2);
+      padding-bottom:3px;
+    }
+    .contact a:hover{ border-bottom-color:var(--text); }
+
+    /* --- AJOUTS dynamiques --- */
+    .system-row{ cursor:pointer; user-select:none; }
+    header h1.pulse{
+      transform: translateY(-1px) scale(1.01);
+      letter-spacing: 3.6px;
+      text-shadow:
+        0 0 10px rgba(255,255,255,.28),
+        0 0 22px rgba(255,255,255,.16),
+        0 0 44px rgba(255,255,255,.08);
+    }
+
+    th.clickable{ cursor:pointer; user-select:none; }
+    th.vanish{
+      opacity:0;
+      transform: translateY(-6px);
+      transition: opacity .35s ease, transform .35s ease;
+      pointer-events:none;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Air.x9</h1>
+</header>
+
+<main>
+
+  <!-- TABLE 1 -->
+  <table>
+    <thead>
+      <tr>
+        <th>Air.Avatara</th><th>h</th>
+        <th>Air.Box</th><th>min</th>
+        <th>Air.Phone</th><th>sec</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="system-row"><td colspan="6">Air.Externus</td></tr>
+
+      <tr><td class="label">Air.Avatara1.0.1</td><td>0</td><td class="label">Air.Box1.0.1</td><td>0</td><td class="label">Air.Phone1.0.1</td><td>0</td></tr>
+      <tr><td class="label">Air.Avatara2.0.1</td><td>1</td><td class="label">Air.Box2.0.1</td><td>1</td><td class="label">Air.Phone2.0.1</td><td>1</td></tr>
+      <tr><td class="label">Air.Avatara3.0.1</td><td>1</td><td class="label">Air.Box3.0.1</td><td>1</td><td class="label">Air.Phone3.0.1</td><td>1</td></tr>
+      <tr><td class="label">Air.Avatara4.0.1</td><td>2</td><td class="label">Air.Box4.0.1</td><td>4</td><td class="label">Air.Phone4.0.1</td><td>8</td></tr>
+      <tr><td class="label">Air.Avatara5.0.1</td><td>3</td><td class="label">Air.Box5.0.1</td><td>9</td><td class="label">Air.Phone5.0.1</td><td>27</td></tr>
+      <tr><td class="label">Air.Avatara6.0.1</td><td>5</td><td class="label">Air.Box6.0.1</td><td>25</td><td class="label">Air.Phone6.0.1</td><td>125</td></tr>
+      <tr><td class="label">Air.Avatara7.0.1</td><td>8</td><td class="label">Air.Box7.0.1</td><td>64</td><td class="label">Air.Phone7.0.1</td><td>512</td></tr>
+      <tr><td class="label">Air.Avatara8.0.1</td><td>13</td><td class="label">Air.Box8.0.1</td><td>169</td><td class="label">Air.Phone8.0.1</td><td>2 197</td></tr>
+      <tr><td class="label">Air.Avatara9.0.1</td><td>21</td><td class="label">Air.Box9.0.1</td><td>441</td><td class="label">Air.Phone9.0.1</td><td>9 261</td></tr>
+    </tbody>
+  </table>
+
+  <!-- MAIL ENTRE LES DEUX -->
+  <div class="contact">
+    <a href="mailto:air@airx9.com">air@airx9.com</a>
+  </div>
+
+  <!-- TABLE 2 -->
+  <table>
+    <thead>
+      <tr>
+        <th>Air.Lux</th><th>km</th>
+        <th>Air.Nox</th><th>m</th>
+        <th>Air.Dies</th><th>mm</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="system-row"><td colspan="6">Air.Internus</td></tr>
+
+      <tr><td class="label">Air.Lux0.1.2</td><td>34</td><td class="label">Air.Nox0.1.2</td><td>1 156</td><td class="label">Air.Dies0.1.2</td><td>39 304</td></tr>
+      <tr><td class="label">Air.Lux0.2.2</td><td>55</td><td class="label">Air.Nox0.2.2</td><td>3 025</td><td class="label">Air.Dies0.2.2</td><td>166 375</td></tr>
+      <tr><td class="label">Air.Lux0.3.2</td><td>89</td><td class="label">Air.Nox0.3.2</td><td>7 921</td><td class="label">Air.Dies0.3.2</td><td>704 969</td></tr>
+      <tr><td class="label">Air.Lux0.4.2</td><td>144</td><td class="label">Air.Nox0.4.2</td><td>20 736</td><td class="label">Air.Dies0.4.2</td><td>2 985 984</td></tr>
+      <tr><td class="label">Air.Lux0.5.2</td><td>233</td><td class="label">Air.Nox0.5.2</td><td>54 289</td><td class="label">Air.Dies0.5.2</td><td>12 649 337</td></tr>
+      <tr><td class="label">Air.Lux0.6.2</td><td>377</td><td class="label">Air.Nox0.6.2</td><td>142 129</td><td class="label">Air.Dies0.6.2</td><td>53 582 633</td></tr>
+      <tr><td class="label">Air.Lux0.7.2</td><td>610</td><td class="label">Air.Nox0.7.2</td><td>372 100</td><td class="label">Air.Dies0.7.2</td><td>226 981 000</td></tr>
+      <tr><td class="label">Air.Lux0.8.2</td><td>987</td><td class="label">Air.Nox0.8.2</td><td>974 169</td><td class="label">Air.Dies0.8.2</td><td>961 504 803</td></tr>
+      <tr><td class="label">Air.Lux0.9.2</td><td>1 597</td><td class="label">Air.Nox0.9.2</td><td>2 550 409</td><td class="label">Air.Dies0.9.2</td><td>4 073 676 409</td></tr>
+    </tbody>
+  </table>
+
+</main>
+
+<script>
+(() => {
+  // ====== CONFIG ======
+  const OTHER_SITE_URL = "https://air9x.com";
+  const ZIP_URL_THIS_SITE = "https://github.com/OWNER/REPO/releases/download/v1.0/module.zip";
+
+  const title = document.querySelector("header h1");
+
+  // ====== Portail strict : Externus (1) -> Internus (2) ======
+  const systemRows = Array.from(document.querySelectorAll("tr.system-row"));
+  const externusRow = systemRows.find(r => r.textContent.includes("Air.Externus"));
+  const internusRow = systemRows.find(r => r.textContent.includes("Air.Internus"));
+
+  let portalStage = 0;
+
+  function pulse(){
+    title.classList.add("pulse");
+    clearTimeout(pulse._t);
+    pulse._t = setTimeout(() => title.classList.remove("pulse"), 420);
+  }
+
+  if (externusRow) {
+    externusRow.addEventListener("click", () => {
+      if (portalStage !== 0) return;
+      portalStage = 1;
+      pulse();
+    });
+  }
+
+  if (internusRow) {
+    internusRow.addEventListener("click", () => {
+      if (portalStage !== 1) return;
+      window.open(OTHER_SITE_URL, "_blank", "noopener,noreferrer");
+      portalStage = 0;
+    });
+  }
+
+  // ====== ZIP strict : Dies (1) -> Nox (2) -> Lux (3) ======
+  const tables = Array.from(document.querySelectorAll("table"));
+  const table2 = tables[1];
+  if (!table2) return;
+
+  const ths2 = Array.from(table2.querySelectorAll("thead th"));
+  const thDies = ths2.find(th => th.textContent.trim() === "Air.Dies");
+  const thNox  = ths2.find(th => th.textContent.trim() === "Air.Nox");
+  const thLux  = ths2.find(th => th.textContent.trim() === "Air.Lux");
+  if (!thDies || !thNox || !thLux) return;
+
+  [thDies, thNox, thLux].forEach(th => th.classList.add("clickable"));
+
+  let zipStage = 0;
+
+  function vanish(el){ el.classList.add("vanish"); }
+
+  function downloadZip(url){
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "module.zip";
+    a.rel = "noopener";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+  }
+
+  thDies.addEventListener("click", () => {
+    if (zipStage !== 0) return;
+    vanish(thDies);
+    zipStage = 1;
+  });
+
+  thNox.addEventListener("click", () => {
+    if (zipStage !== 1) return;
+    vanish(thNox);
+    zipStage = 2;
+  });
+
+  thLux.addEventListener("click", () => {
+    if (zipStage !== 2) return;
+    vanish(thLux);
+    downloadZip(ZIP_URL_THIS_SITE);
+    zipStage = 3;
+  });
+})();
+</script>
+
+</body></html>
