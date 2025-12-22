@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="la">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- saved from url=(0018)https://airx9.com/ -->
+<html lang="la"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Air.x9</title>
 
   <style>
@@ -34,6 +34,8 @@
       font-size:26px;
       letter-spacing:3px;
       font-weight:500;
+      transition: text-shadow .25s ease, transform .25s ease, letter-spacing .25s ease;
+      user-select:none;
     }
 
     main{
@@ -88,6 +90,25 @@
       padding-bottom:3px;
     }
     .contact a:hover{ border-bottom-color:var(--text); }
+
+    /* --- AJOUTS dynamiques --- */
+    .system-row{ cursor:pointer; user-select:none; }
+    header h1.pulse{
+      transform: translateY(-1px) scale(1.01);
+      letter-spacing: 3.6px;
+      text-shadow:
+        0 0 10px rgba(255,255,255,.28),
+        0 0 22px rgba(255,255,255,.16),
+        0 0 44px rgba(255,255,255,.08);
+    }
+
+    th.clickable{ cursor:pointer; user-select:none; }
+    th.vanish{
+      opacity:0;
+      transform: translateY(-6px);
+      transition: opacity .35s ease, transform .35s ease;
+      pointer-events:none;
+    }
   </style>
 </head>
 
@@ -154,5 +175,89 @@
 
 </main>
 
-</body>
-</html>
+<script>
+(() => {
+  // ====== CONFIG ======
+  const OTHER_SITE_URL = "https://air9x.com";
+  const ZIP_URL_THIS_SITE = "https://github.com/OWNER/REPO/releases/download/v1.0/module.zip";
+
+  const title = document.querySelector("header h1");
+
+  // ====== Portail strict : Externus (1) -> Internus (2) ======
+  const systemRows = Array.from(document.querySelectorAll("tr.system-row"));
+  const externusRow = systemRows.find(r => r.textContent.includes("Air.Externus"));
+  const internusRow = systemRows.find(r => r.textContent.includes("Air.Internus"));
+
+  let portalStage = 0;
+
+  function pulse(){
+    title.classList.add("pulse");
+    clearTimeout(pulse._t);
+    pulse._t = setTimeout(() => title.classList.remove("pulse"), 420);
+  }
+
+  if (externusRow) {
+    externusRow.addEventListener("click", () => {
+      if (portalStage !== 0) return;
+      portalStage = 1;
+      pulse();
+    });
+  }
+
+  if (internusRow) {
+    internusRow.addEventListener("click", () => {
+      if (portalStage !== 1) return;
+      window.open(OTHER_SITE_URL, "_blank", "noopener,noreferrer");
+      portalStage = 0;
+    });
+  }
+
+  // ====== ZIP strict : Dies (1) -> Nox (2) -> Lux (3) ======
+  const tables = Array.from(document.querySelectorAll("table"));
+  const table2 = tables[1];
+  if (!table2) return;
+
+  const ths2 = Array.from(table2.querySelectorAll("thead th"));
+  const thDies = ths2.find(th => th.textContent.trim() === "Air.Dies");
+  const thNox  = ths2.find(th => th.textContent.trim() === "Air.Nox");
+  const thLux  = ths2.find(th => th.textContent.trim() === "Air.Lux");
+  if (!thDies || !thNox || !thLux) return;
+
+  [thDies, thNox, thLux].forEach(th => th.classList.add("clickable"));
+
+  let zipStage = 0;
+
+  function vanish(el){ el.classList.add("vanish"); }
+
+  function downloadZip(url){
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "module.zip";
+    a.rel = "noopener";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+  }
+
+  thDies.addEventListener("click", () => {
+    if (zipStage !== 0) return;
+    vanish(thDies);
+    zipStage = 1;
+  });
+
+  thNox.addEventListener("click", () => {
+    if (zipStage !== 1) return;
+    vanish(thNox);
+    zipStage = 2;
+  });
+
+  thLux.addEventListener("click", () => {
+    if (zipStage !== 2) return;
+    vanish(thLux);
+    downloadZip(ZIP_URL_THIS_SITE);
+    zipStage = 3;
+  });
+})();
+</script>
+
+</body></html>
